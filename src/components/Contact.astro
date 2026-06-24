@@ -1,0 +1,133 @@
+---
+const mapQuery = encodeURIComponent('Tagadi, Saku vald, Eesti');
+---
+
+<section class="section" id="kontakt">
+	<div class="container">
+		<p class="eyebrow">Kontakt</p>
+		<h2>Võta ühendust</h2>
+		<p class="section-lead">
+			Hea meelega vastame Sinu küsimustele kinnisvara müügi või haldamise teemal.
+		</p>
+
+		<div class="contact-grid">
+			<div class="contact-card">
+				<div class="contact-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<path
+							d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</div>
+				<h3>Telefon</h3>
+				<a href="tel:+3725017424">+372 5017 424</a>
+			</div>
+
+			<div class="contact-card">
+				<div class="contact-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<rect x="3" y="5" width="18" height="14" rx="2" />
+						<path d="m4 6 8 7 8-7" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<h3>E-post</h3>
+				<a href="mailto:info@millkinnisvara.ee">info@millkinnisvara.ee</a>
+			</div>
+
+			<div class="contact-card">
+				<div class="contact-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<path
+							d="M12 21s7-6.1 7-11.3A7 7 0 0 0 5 9.7C5 14.9 12 21 12 21Z"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+						<circle cx="12" cy="9.5" r="2.3" />
+					</svg>
+				</div>
+				<h3>Aadress</h3>
+				<p>Nano, Tagadi, Saku vald</p>
+			</div>
+		</div>
+
+		<div class="map-embed">
+			<iframe
+				src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+				title="Mill Kinnisvara asukoht kaardil"
+			></iframe>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+		margin-top: 48px;
+	}
+
+	.contact-card {
+		background: #ffffff;
+		border: 1px solid var(--color-border);
+		border-radius: 16px;
+		padding: 32px;
+		text-align: center;
+	}
+
+	.contact-icon {
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		background: var(--color-bg-alt);
+		color: var(--color-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 18px;
+	}
+
+	.contact-icon svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.contact-card h3 {
+		font-size: 1rem;
+		margin-bottom: 8px;
+	}
+
+	.contact-card a {
+		text-decoration: none;
+		font-weight: 600;
+		color: var(--color-primary);
+	}
+
+	.contact-card p {
+		color: var(--color-text-muted);
+		font-weight: 600;
+	}
+
+	.map-embed {
+		margin-top: 40px;
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+	}
+
+	.map-embed iframe {
+		width: 100%;
+		height: 340px;
+		border: 0;
+	}
+
+	@media (max-width: 860px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,102 @@
+---
+const values = [
+	{
+		title: 'Usaldusväärsus',
+		text: 'Peame kinni lubatud tähtaegadest ja hoiame Sind kogu protsessi vältel kursis.',
+	},
+	{
+		title: 'Personaalne teenindus',
+		text: 'Igale kliendile läheneme individuaalselt, lähtudes Sinu konkreetsest olukorrast ja eesmärkidest.',
+	},
+	{
+		title: 'Kohalik turuteadmine',
+		text: 'Tunneme kohalikku kinnisvaraturgu ja oskame seda teadmist Sinu kasuks rakendada.',
+	},
+];
+---
+
+<section class="section section-alt" id="meist">
+	<div class="container about-grid">
+		<div class="about-text">
+			<p class="eyebrow">Meist</p>
+			<h2>Kinnisvarateenus, mis põhineb usaldusel</h2>
+			<p>
+				Mill Kinnisvara on kinnisvarafirma, mis keskendub kinnisvara müügivahendusele ja
+				haldusele. Meie eesmärk on pakkuda klientidele professionaalset, ausat ja personaalset
+				teenust igas tehingu või halduse etapis.
+			</p>
+			<p>
+				Usume, et hea kinnisvarateenus põhineb usaldusel, kohalikul turuteadmisel ja hoolival
+				suhtumisel kliendi vajadustesse.
+			</p>
+		</div>
+
+		<div class="value-list">
+			{values.map((value) => (
+				<div class="value-item">
+					<span class="value-dot"></span>
+					<div>
+						<h4>{value.title}</h4>
+						<p>{value.text}</p>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1.1fr 1fr;
+		gap: 64px;
+		align-items: start;
+	}
+
+	.about-text h2 {
+		font-size: 2rem;
+		margin: 8px 0 24px;
+	}
+
+	.about-text p {
+		color: var(--color-text-muted);
+		margin-bottom: 16px;
+	}
+
+	.value-list {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+	}
+
+	.value-item {
+		display: flex;
+		gap: 16px;
+	}
+
+	.value-dot {
+		flex-shrink: 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: var(--color-primary);
+		margin-top: 8px;
+	}
+
+	.value-item h4 {
+		font-size: 1.05rem;
+		margin-bottom: 6px;
+	}
+
+	.value-item p {
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 860px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+</style>

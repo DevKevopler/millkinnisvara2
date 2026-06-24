@@ -1,0 +1,79 @@
+<section class="hero" id="top">
+	<svg class="hero-shape" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">
+		<rect x="40" y="120" width="90" height="140" fill="rgba(255,255,255,0.06)" />
+		<rect x="150" y="60" width="70" height="200" fill="rgba(255,255,255,0.08)" />
+		<rect x="240" y="150" width="60" height="110" fill="rgba(255,255,255,0.05)" />
+		<rect x="950" y="100" width="80" height="160" fill="rgba(255,255,255,0.06)" />
+		<rect x="1050" y="40" width="60" height="220" fill="rgba(255,255,255,0.08)" />
+		<rect x="1130" y="140" width="50" height="120" fill="rgba(255,255,255,0.05)" />
+	</svg>
+
+	<div class="container hero-inner">
+		<p class="eyebrow hero-eyebrow">Kinnisvara müük ja haldus</p>
+		<h1>Usaldusväärne partner kinnisvara müügil ja haldamisel</h1>
+		<p class="hero-lead">
+			Mill Kinnisvara aitab Sul kinnisvara kiiresti ja turvaliselt müüa või selle väärtust
+			igapäevase haldamisega hoida ja kasvatada.
+		</p>
+		<div class="hero-actions">
+			<a href="#kontakt" class="btn btn-primary">Võta ühendust</a>
+			<a href="#teenused" class="btn btn-outline">Meie teenused</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+		color: #ffffff;
+		padding: 120px 0 140px;
+		overflow: hidden;
+	}
+
+	.hero-shape {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 220px;
+	}
+
+	.hero-inner {
+		position: relative;
+		z-index: 1;
+		max-width: 700px;
+	}
+
+	.hero-eyebrow {
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.hero h1 {
+		font-size: 2.75rem;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.hero-lead {
+		font-size: 1.15rem;
+		color: rgba(255, 255, 255, 0.85);
+		margin-bottom: 36px;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 720px) {
+		.hero {
+			padding: 100px 0 120px;
+		}
+
+		.hero h1 {
+			font-size: 2.1rem;
+		}
+	}
+</style>

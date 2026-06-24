@@ -1,0 +1,169 @@
+---
+const navLinks = [
+	{ href: '#teenused', label: 'Teenused' },
+	{ href: '#meist', label: 'Meist' },
+	{ href: '#kontakt', label: 'Kontakt' },
+];
+---
+
+<header class="site-header">
+	<div class="container header-inner">
+		<a href="#top" class="brand">
+			<img src="/firmalogomill.png" alt="Mill Kinnisvara" width="44" height="44" />
+			<span>Mill Kinnisvara</span>
+		</a>
+
+		<nav class="nav" id="site-nav">
+			<ul>
+				{navLinks.map((link) => (
+					<li><a href={link.href}>{link.label}</a></li>
+				))}
+			</ul>
+			<a href="tel:+3725017424" class="nav-phone">+372 5017 424</a>
+			<a href="#kontakt" class="btn btn-primary btn-sm">Võta ühendust</a>
+		</nav>
+
+		<button class="nav-toggle" id="nav-toggle" aria-label="Ava menüü" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</div>
+</header>
+
+<script>
+	const toggle = document.getElementById('nav-toggle');
+	const nav = document.getElementById('site-nav');
+
+	toggle?.addEventListener('click', () => {
+		const isOpen = nav?.classList.toggle('open');
+		toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+	});
+
+	nav?.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', () => {
+			nav.classList.remove('open');
+			toggle?.setAttribute('aria-expanded', 'false');
+		});
+	});
+</script>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(8px);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.header-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 80px;
+	}
+
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-weight: 700;
+		font-size: 1.15rem;
+		color: var(--color-primary);
+	}
+
+	.brand img {
+		border-radius: 8px;
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		gap: 28px;
+	}
+
+	.nav ul {
+		display: flex;
+		gap: 28px;
+		list-style: none;
+	}
+
+	.nav ul a {
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.95rem;
+		color: var(--color-text);
+		transition: color 0.2s ease;
+	}
+
+	.nav ul a:hover {
+		color: var(--color-primary);
+	}
+
+	.nav-phone {
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.95rem;
+		color: var(--color-primary);
+		white-space: nowrap;
+	}
+
+	.nav-toggle {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		gap: 5px;
+		width: 36px;
+		height: 36px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.nav-toggle span {
+		display: block;
+		height: 2px;
+		width: 100%;
+		background: var(--color-primary);
+		border-radius: 2px;
+	}
+
+	@media (max-width: 860px) {
+		.nav-toggle {
+			display: flex;
+		}
+
+		.nav {
+			position: absolute;
+			top: 80px;
+			left: 0;
+			right: 0;
+			background: #ffffff;
+			border-bottom: 1px solid var(--color-border);
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+			padding: 24px;
+			display: none;
+		}
+
+		.nav.open {
+			display: flex;
+		}
+
+		.nav ul {
+			flex-direction: column;
+			gap: 16px;
+			width: 100%;
+		}
+
+		.nav-phone {
+			order: 3;
+		}
+	}
+</style>

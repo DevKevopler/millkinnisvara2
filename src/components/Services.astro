@@ -1,0 +1,132 @@
+<section class="section" id="teenused">
+	<div class="container">
+		<p class="eyebrow">Teenused</p>
+		<h2>Mida me Sinu heaks teeme</h2>
+		<p class="section-lead">
+			Keskendume kahele põhivaldkonnale, et Sinu kinnisvara oleks heades kätes – müügist
+			haldamiseni.
+		</p>
+
+		<div class="service-grid">
+			<article class="service-card">
+				<div class="service-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<path d="M3 11.5 12 4l9 7.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M5 10v9.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M9.5 20.5V14h5v6.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<h3>Kinnisvara müügivahendus</h3>
+				<p>
+					Korraldame müügiprotsessi algusest lõpuni – hindamisest ja turundamisest kuni
+					lepingute sõlmimiseni. Hoolitseme selle eest, et tehing oleks Sulle kiire, turvaline
+					ja võimalikult tulus.
+				</p>
+				<ul class="service-list">
+					<li>Tasuta hindamine ja nõustamine</li>
+					<li>Professionaalne turundus ja fotod</li>
+					<li>Ostjate leidmine ja läbirääkimised</li>
+					<li>Tehingu juriidiline korraldamine</li>
+				</ul>
+			</article>
+
+			<article class="service-card">
+				<div class="service-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<rect x="4" y="3" width="16" height="18" rx="1" stroke-linejoin="round" />
+						<path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2" stroke-linecap="round" />
+						<path d="M10 21v-3h4v3" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<h3>Kinnisvara haldus</h3>
+				<p>
+					Võtame enda hooleks Su kinnisvara igapäevase haldamise, et omanikuks olemine oleks
+					mugav ja muretu – olgu see korter, maja või äripind.
+				</p>
+				<ul class="service-list">
+					<li>Üürilepingute haldamine</li>
+					<li>Tehniline haldus ja hooldus</li>
+					<li>Kommunaalarvete ja maksete korraldamine</li>
+					<li>Regulaarne aruandlus omanikule</li>
+				</ul>
+			</article>
+		</div>
+	</div>
+</section>
+
+<style>
+	.service-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+		margin-top: 48px;
+	}
+
+	.service-card {
+		background: #ffffff;
+		border: 1px solid var(--color-border);
+		border-radius: 16px;
+		padding: 40px;
+	}
+
+	.service-icon {
+		width: 56px;
+		height: 56px;
+		border-radius: 12px;
+		background: var(--color-bg-alt);
+		color: var(--color-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 24px;
+	}
+
+	.service-icon svg {
+		width: 28px;
+		height: 28px;
+	}
+
+	.service-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 14px;
+	}
+
+	.service-card > p {
+		color: var(--color-text-muted);
+		margin-bottom: 20px;
+	}
+
+	.service-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.service-list li {
+		position: relative;
+		padding-left: 24px;
+		font-size: 0.95rem;
+	}
+
+	.service-list li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--color-primary);
+	}
+
+	@media (max-width: 860px) {
+		.service-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.service-card {
+			padding: 32px;
+		}
+	}
+</style>
