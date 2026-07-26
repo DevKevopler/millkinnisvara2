@@ -5,10 +5,8 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-brand">
-			<img src="/firmalogomill.png" alt="Mill Kinnisvara" width="44" height="44" />
-			<div>
-				<h2>Mill Kinnisvara</h2>
-			</div>
+			<img src="/firmalogomill.png" alt="Mill Kinnisvara" width="64" height="64" />
+			<h2>Mill Kinnisvara</h2>
 		</div>
 
 		<div class="footer-col">
@@ -52,19 +50,21 @@ const year = new Date().getFullYear();
 
 	.footer-brand {
 		display: flex;
-		gap: 14px;
+		align-items: center;
+		gap: 18px;
 	}
 
 	.footer-brand img {
-		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.92);
-		padding: 4px;
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.94);
+		padding: 6px;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 	}
 
 	.footer-brand h2 {
-		display: block;
 		color: #ffffff;
-		font-size: 1.1rem;
+		font-size: 1.6rem;
+		letter-spacing: 0.01em;
 	}
 
 	.footer-col h4 {
