@@ -3,8 +3,8 @@
 		<p class="eyebrow">Teenused</p>
 		<h2>Mida me Sinu heaks teeme</h2>
 		<p class="section-lead">
-			Keskendume kolmele põhivaldkonnale, et Sinu kinnisvara oleks heades kätes – müügist
-			hoolduseni.
+			Keskendume kahele põhivaldkonnale, et Sinu kinnisvara oleks heades kätes – müügist
+			haldamise ja hoolduseni.
 		</p>
 
 		<div class="service-grid">
@@ -39,7 +39,7 @@
 						<path d="M10 21v-3h4v3" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 				</div>
-				<h3>Kinnisvara haldus</h3>
+				<h3>Kinnisvara haldus ja hooldus</h3>
 				<p>
 					Võtame enda hooleks Su kinnisvara igapäevase haldamise ja hooldamise, et omanikuks
 					olemine oleks mugav ja muretu – olgu see tootmispind, äripind või eramaja.
@@ -48,25 +48,9 @@
 					<li>Tootmispinnad → tootmis- ja laohooned, tööstuspinnad</li>
 					<li>Äripinnad → bürood ja kaubanduspinnad</li>
 					<li>Eramajad → eramud ja elamud</li>
-				</ul>
-			</article>
-
-			<article class="service-card">
-				<div class="service-icon">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-						<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-3-3 2.6-2.6Z" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</div>
-				<h3>Kinnisvara hooldus</h3>
-				<p>
-					Korraldame kinnisvara tehnohoolduse ja remonditööd, et hoone püsiks heas seisukorras
-					ning rikked saaksid kiiresti lahendatud.
-				</p>
-				<ul class="service-list">
 					<li>Plaaniline hooldus ja ülevaatused</li>
 					<li>Kiire rikete lahendamine</li>
 					<li>Remondi- ja hooldustööde korraldamine</li>
-					<li>Usaldusväärsed hooldus- ja remondipartnerid</li>
 					<li>Ehitusteenus</li>
 					<li>Sisekoristus</li>
 					<li>Välikoristus</li>
@@ -79,7 +63,7 @@
 <style>
 	.service-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 32px;
 		margin-top: 48px;
 	}
@@ -142,13 +126,7 @@
 		background: var(--color-primary);
 	}
 
-	@media (max-width: 1080px) {
-		.service-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (max-width: 640px) {
+	@media (max-width: 860px) {
 		.service-grid {
 			grid-template-columns: 1fr;
 		}
