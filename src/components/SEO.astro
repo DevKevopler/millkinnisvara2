@@ -1,0 +1,70 @@
+---
+// src/components/SEO.astro
+// Reusable SEO component. Drop into any page/layout:
+//
+// import SEO from '../components/SEO.astro';
+// <SEO
+//   title="Kinnisvara müük ja haldus Tallinnas ja Harjumaal | Mill Kinnisvara"
+//   description="Mill Kinnisvara aitab kinnisvara kiiresti ja turvaliselt müüa või selle väärtust haldamisega kasvatada. Tasuta hindamine, professionaalne turundus."
+//   path="/"
+// />
+
+export interface Props {
+  title: string;
+  description: string;
+  path?: string;          // e.g. "/muugivahendus" — defaults to "/"
+  image?: string;          // defaults to the logo
+  type?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  path = '/',
+  image = '/firmalogomill.png',
+  type = 'website',
+} = Astro.props;
+
+const site = 'https://millkinnisvara.ee';
+const canonicalURL = new URL(path, site).toString();
+const imageURL = new URL(image, site).toString();
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:locale" content="et_EE" />
+<meta property="og:site_name" content="Mill Kinnisvara" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Mill Kinnisvara OÜ",
+  "image": imageURL,
+  "telephone": "+372 5017 424",
+  "email": "info@millkinnisvara.ee",
+  "url": site,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nano, Tagadi küla",
+    "addressLocality": "Saku vald",
+    "addressRegion": "Harjumaa",
+    "addressCountry": "EE"
+  },
+  "areaServed": ["Tallinn", "Harjumaa", "Saku vald"],
+  "priceRange": "Müügivahendustasu 5%"
+})} />
