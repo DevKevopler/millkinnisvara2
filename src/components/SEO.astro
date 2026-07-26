@@ -21,7 +21,7 @@ const {
   title,
   description,
   path = '/',
-  image = '/firmalogomill.png',
+  image = '/og-image.png',
   type = 'website',
 } = Astro.props;
 
@@ -50,7 +50,7 @@ const imageURL = new URL(image, site).toString();
 <meta name="twitter:image" content={imageURL} />
 
 <!-- LocalBusiness structured data -->
-<script type="application/ld+json" set:html={JSON.stringify({
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "name": "Mill Kinnisvara OÜ",

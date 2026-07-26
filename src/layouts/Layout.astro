@@ -10,7 +10,7 @@ interface Props {
 
 const {
 	title = 'Kinnisvara müük ja haldus Tallinnas ja Harjumaal | Mill Kinnisvara',
-	description = 'Mill Kinnisvara aitab kinnisvara kiiresti ja turvaliselt müüa või selle väärtust haldamisega kasvatada. Tasuta hindamine, professionaalne turundus ja kohalik turuteadmine.',
+	description = 'Mill Kinnisvara pakub kinnisvara müügivahendust, haldust ja hooldust Tallinnas ja Harjumaal. Tasuta hindamine, professionaalne turundus ja kohalik turuteadmine.',
 	path = '/',
 } = Astro.props;
 ---
@@ -26,9 +26,17 @@ const {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
+			rel="preload"
+			as="style"
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
-			rel="stylesheet"
+			onload="this.onload=null;this.rel='stylesheet'"
 		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+			/>
+		</noscript>
 	</head>
 	<body>
 		<slot />
