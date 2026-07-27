@@ -3,10 +3,11 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
+	<div class="footer-accent" aria-hidden="true"></div>
+
 	<div class="container footer-inner">
 		<div class="footer-brand">
-			<img src="/firmalogomill.png" alt="Mill Kinnisvara" width="64" height="64" />
-			<h2><span class="brand-mill">MILL</span><span class="brand-kinnisvara">Kinnisvara</span></h2>
+			<img src="/firmalogomill.png" alt="Mill Kinnisvara" width="84" height="84" class="footer-logo" />
 		</div>
 
 		<div class="footer-col">
@@ -20,101 +21,196 @@ const year = new Date().getFullYear();
 
 		<div class="footer-col">
 			<h4>Kontakt</h4>
-			<ul>
-				<li><a href="tel:+3725017424">+372 5017 424</a></li>
-				<li><a href="mailto:info@millkinnisvara.ee">info@millkinnisvara.ee</a></li>
-				<li>Nano Tagadi küla Saku vald</li>
+			<ul class="footer-contact-list">
+				<li>
+					<a href="tel:+3725017424">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+							<path
+								d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+						<span>+372 5017 424</span>
+					</a>
+				</li>
+				<li>
+					<a href="mailto:info@millkinnisvara.ee">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+							<rect x="3" y="5" width="18" height="14" rx="2" />
+							<path d="m4 6 8 7 8-7" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>info@millkinnisvara.ee</span>
+					</a>
+				</li>
+				<li>
+					<span class="footer-contact-static">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+							<path
+								d="M12 21s7-6.1 7-11.3A7 7 0 0 0 5 9.7C5 14.9 12 21 12 21Z"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<circle cx="12" cy="9.5" r="2.3" />
+						</svg>
+						<span>Nano Tagadi küla Saku vald</span>
+					</span>
+				</li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="footer-bottom">
-		<div class="container">
-			<p>&copy; {year} Mill Kinnisvara. Kõik õigused kaitstud.</p>
+		<div class="container footer-bottom-inner">
+			<p>&copy; {year} Mill Kinnisvara.</p>
+			<a href="#algus" class="footer-top-link">
+				Tagasi üles
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</a>
 		</div>
 	</div>
 </footer>
 
 <style>
 	.site-footer {
+		position: relative;
 		background: var(--color-primary-dark);
 		color: rgba(255, 255, 255, 0.85);
 	}
 
+	.footer-accent {
+		height: 4px;
+		background: linear-gradient(90deg, var(--color-primary-light), var(--color-hero-accent), var(--color-primary-light));
+	}
+
 	.footer-inner {
 		display: grid;
-		grid-template-columns: 1.4fr 1fr 1fr;
-		gap: 40px;
-		padding: 64px 24px 48px;
+		grid-template-columns: 1.5fr 1fr 1fr;
+		gap: 48px;
+		padding: 72px 24px 48px;
 	}
 
 	.footer-brand {
 		display: flex;
-		align-items: center;
-		gap: 18px;
 	}
 
-	.footer-brand img {
-		border-radius: 12px;
-		background: rgba(255, 255, 255, 0.94);
-		padding: 6px;
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-	}
-
-	.footer-brand h2 {
-		display: flex;
-		align-items: baseline;
-		gap: 6px;
-		font-size: 1.6rem;
-	}
-
-	.brand-mill {
-		font-family: var(--font-heading);
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		color: #ffffff;
-	}
-
-	.brand-kinnisvara {
-		font-family: var(--font-body);
-		font-weight: 400;
-		letter-spacing: 0.01em;
-		color: rgba(255, 255, 255, 0.75);
+	.footer-logo {
+		filter: brightness(0) invert(1);
+		opacity: 0.95;
 	}
 
 	.footer-col h4 {
+		position: relative;
+		display: inline-block;
 		color: #ffffff;
-		font-size: 0.95rem;
-		margin-bottom: 16px;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin-bottom: 22px;
+		padding-bottom: 12px;
+	}
+
+	.footer-col h4::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 28px;
+		height: 2px;
+		background: var(--color-hero-accent);
 	}
 
 	.footer-col ul {
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
-		font-size: 0.9rem;
+		gap: 14px;
+		font-size: 0.92rem;
 	}
 
 	.footer-col a {
 		text-decoration: none;
+		transition: color 0.2s ease, padding-left 0.2s ease;
 	}
 
 	.footer-col a:hover {
 		color: #ffffff;
 	}
 
+	.footer-contact-list li a,
+	.footer-contact-static {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.footer-contact-list svg {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		color: var(--color-hero-accent);
+	}
+
 	.footer-bottom {
 		border-top: 1px solid rgba(255, 255, 255, 0.12);
-		padding: 20px 0;
+		padding: 22px 0;
 		font-size: 0.85rem;
+	}
+
+	.footer-bottom-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.footer-top-link {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		text-decoration: none;
+		color: rgba(255, 255, 255, 0.75);
+		font-weight: 600;
+		font-size: 0.85rem;
+		transition: color 0.2s ease, transform 0.2s ease;
+	}
+
+	.footer-top-link svg {
+		width: 14px;
+		height: 14px;
+	}
+
+	.footer-top-link:hover {
+		color: var(--color-hero-accent);
+		transform: translateY(-2px);
 	}
 
 	@media (max-width: 720px) {
 		.footer-inner {
-			grid-template-columns: 1fr;
-			gap: 32px;
+			grid-template-columns: 1fr 1fr;
+			gap: 32px 24px;
+		}
+
+		.footer-brand {
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		.footer-logo {
+			width: 64px;
+			height: 64px;
+		}
+
+		.footer-col:last-of-type {
+			grid-column: 1 / -1;
+		}
+
+		.footer-bottom-inner {
+			flex-direction: column;
+			text-align: center;
+			gap: 12px;
 		}
 	}
 </style>

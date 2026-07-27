@@ -52,9 +52,8 @@ const navLinks = [
 		position: sticky;
 		top: 0;
 		z-index: 50;
-		background: rgba(255, 255, 255, 0.95);
-		backdrop-filter: blur(8px);
-		border-bottom: 1px solid var(--color-border);
+		background: var(--color-primary-dark);
+		border-bottom: 1px solid var(--color-hero-accent);
 	}
 
 	.header-inner {
@@ -72,11 +71,12 @@ const navLinks = [
 		font-family: var(--font-heading);
 		font-weight: 700;
 		font-size: 1.15rem;
-		color: var(--color-primary);
+		color: #ffffff;
 	}
 
 	.brand img {
 		border-radius: 8px;
+		filter: brightness(0) invert(1);
 	}
 
 	.nav {
@@ -92,30 +92,57 @@ const navLinks = [
 	}
 
 	.nav ul a {
+		position: relative;
 		text-decoration: none;
+		font-family: var(--font-body);
 		font-weight: 600;
-		font-size: 0.95rem;
-		color: var(--color-text);
+		font-size: 0.82rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: rgba(255, 255, 255, 0.85);
+		padding: 6px 0;
 		transition: color 0.2s ease;
 	}
 
+	.nav ul a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 2px;
+		background: var(--color-hero-accent);
+		transition: width 0.25s ease;
+	}
+
 	.nav ul a:hover {
-		color: var(--color-primary);
+		color: #ffffff;
+	}
+
+	.nav ul a:hover::after {
+		width: 100%;
 	}
 
 	.nav-phone {
 		text-decoration: none;
-		font-weight: 600;
-		font-size: 0.95rem;
-		color: var(--color-primary);
+		font-family: var(--font-body);
+		font-weight: 700;
+		font-size: 0.88rem;
+		letter-spacing: 0.02em;
+		color: var(--color-hero-accent);
 		white-space: nowrap;
+		transition: color 0.2s ease;
+	}
+
+	.nav-phone:hover {
+		color: #ffffff;
 	}
 
 	.nav-toggle {
 		display: none;
 		flex-direction: column;
 		justify-content: center;
-		gap: 5px;
+		gap: 6px;
 		width: 36px;
 		height: 36px;
 		background: none;
@@ -126,9 +153,9 @@ const navLinks = [
 
 	.nav-toggle span {
 		display: block;
-		height: 2px;
 		width: 100%;
-		background: var(--color-primary);
+		height: 2px;
+		background: #ffffff;
 		border-radius: 2px;
 	}
 
@@ -142,17 +169,24 @@ const navLinks = [
 			top: 96px;
 			left: 0;
 			right: 0;
-			background: #ffffff;
-			border-bottom: 1px solid var(--color-border);
+			background: var(--color-primary-dark);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 			flex-direction: column;
 			align-items: flex-start;
 			gap: 20px;
 			padding: 24px;
-			display: none;
+			opacity: 0;
+			transform: translateY(-12px);
+			visibility: hidden;
+			pointer-events: none;
+			transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 		}
 
 		.nav.open {
-			display: flex;
+			opacity: 1;
+			transform: translateY(0);
+			visibility: visible;
+			pointer-events: auto;
 		}
 
 		.nav ul {

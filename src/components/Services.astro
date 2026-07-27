@@ -1,7 +1,7 @@
 <section class="section" id="teenused">
 	<div class="container">
 		<p class="eyebrow">Teenused</p>
-		<h2>Mida me Sinu heaks teeme</h2>
+		<h2 class="title-slide">Mida me Sinu heaks teeme</h2>
 		<p class="section-lead">
 			Keskendume kolmele põhivaldkonnale – kinnisvara müügivahendus, haldus ja hooldus –, et
 			Sinu kinnisvara oleks heades kätes müügist hoolduseni.
@@ -9,12 +9,8 @@
 
 		<div class="service-grid">
 			<article class="service-card">
-				<div class="service-icon">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-						<path d="M3 11.5 12 4l9 7.5" stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M5 10v9.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10" stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M9.5 20.5V14h5v6.5" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
+				<div class="service-media">
+					<img src="/service-muugivahendus.jpg" alt="Kinnisvara müügivahendus" loading="lazy" />
 				</div>
 				<h3>Kinnisvara müügivahendus</h3>
 				<p>
@@ -32,12 +28,8 @@
 			</article>
 
 			<article class="service-card">
-				<div class="service-icon">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-						<rect x="4" y="3" width="16" height="18" rx="1" stroke-linejoin="round" />
-						<path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2" stroke-linecap="round" />
-						<path d="M10 21v-3h4v3" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
+				<div class="service-media">
+					<img src="/service-haldus.jpg" alt="Kinnisvarahaldus" loading="lazy" />
 				</div>
 				<h3>Kinnisvarahaldus</h3>
 				<p>
@@ -52,10 +44,8 @@
 			</article>
 
 			<article class="service-card">
-				<div class="service-icon">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-						<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-3-3 2.6-2.6Z" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
+				<div class="service-media">
+					<img src="/service-hooldus.jpg" alt="Kinnisvarahooldus" loading="lazy" />
 				</div>
 				<h3>Kinnisvarahooldus</h3>
 				<p>
@@ -76,32 +66,25 @@
 	.service-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 32px;
-		margin-top: 48px;
+		gap: 40px;
+		margin-top: 56px;
 	}
 
 	.service-card {
-		background: #ffffff;
-		border: 1px solid var(--color-border);
-		border-radius: 16px;
-		padding: 40px;
+		position: relative;
 	}
 
-	.service-icon {
-		width: 56px;
-		height: 56px;
-		border-radius: 12px;
-		background: var(--color-bg-alt);
-		color: var(--color-primary);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 24px;
+	.service-media {
+		aspect-ratio: 4 / 3;
+		border-radius: 4px;
+		overflow: hidden;
+		margin-bottom: 28px;
 	}
 
-	.service-icon svg {
-		width: 28px;
-		height: 28px;
+	.service-media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	.service-card h3 {
@@ -111,31 +94,34 @@
 
 	.service-card > p {
 		color: var(--color-text-muted);
-		margin-bottom: 20px;
+		line-height: 1.7;
+		margin-bottom: 26px;
 	}
 
 	.service-list {
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
+		gap: 12px;
+		padding-top: 22px;
+		border-top: 1px solid var(--color-border);
 	}
 
 	.service-list li {
 		position: relative;
-		padding-left: 24px;
-		font-size: 0.95rem;
+		padding-left: 20px;
+		font-size: 0.92rem;
+		line-height: 1.5;
 	}
 
 	.service-list li::before {
 		content: '';
 		position: absolute;
 		left: 0;
-		top: 8px;
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: var(--color-primary);
+		top: 0.6em;
+		width: 10px;
+		height: 1px;
+		background: var(--color-hero-accent);
 	}
 
 	@media (max-width: 1080px) {
@@ -147,10 +133,6 @@
 	@media (max-width: 640px) {
 		.service-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.service-card {
-			padding: 32px;
 		}
 	}
 </style>

@@ -1,63 +1,108 @@
 <section class="hero" id="algus">
-	<svg class="hero-shape" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">
-		<rect x="40" y="120" width="90" height="140" fill="rgba(255,255,255,0.06)" />
-		<rect x="150" y="60" width="70" height="200" fill="rgba(255,255,255,0.08)" />
-		<rect x="240" y="150" width="60" height="110" fill="rgba(255,255,255,0.05)" />
-		<rect x="950" y="100" width="80" height="160" fill="rgba(255,255,255,0.06)" />
-		<rect x="1050" y="40" width="60" height="220" fill="rgba(255,255,255,0.08)" />
-		<rect x="1130" y="140" width="50" height="120" fill="rgba(255,255,255,0.05)" />
-	</svg>
+	<div class="hero-bg" aria-hidden="true"></div>
+	<div class="hero-overlay" aria-hidden="true"></div>
 
 	<div class="container hero-inner">
-		<p class="eyebrow hero-eyebrow">Kinnisvara müügivahendus, haldus ja hooldus</p>
-		<h1>Usaldusväärne partner kinnisvara müügil, haldamisel ja hooldusel</h1>
-		<p class="hero-lead">
-			Mill Kinnisvara aitab Sul kinnisvara kiiresti ja turvaliselt müüa, selle väärtust
-			igapäevase haldamisega hoida ning kinnisvara hooldusega korras hoida.
-		</p>
-		<div class="hero-actions">
-			<a href="#kontakt" class="btn btn-primary">Võta ühendust</a>
-			<a href="#teenused" class="btn btn-outline">Meie teenused</a>
+		<div class="hero-text">
+			<p class="eyebrow hero-eyebrow">Kinnisvara müügivahendus, haldus ja hooldus</p>
+			<h1 class="title-slide">Usaldusväärne partner kinnisvara müügil, haldamisel ja hooldusel</h1>
+			<p class="hero-lead">
+				Mill Kinnisvara aitab Sul kinnisvara kiiresti ja turvaliselt müüa, selle väärtust
+				igapäevase haldamisega hoida ning kinnisvara hooldusega korras hoida.
+			</p>
+			<div class="hero-actions">
+				<a href="#kontakt" class="btn btn-primary">Võta ühendust</a>
+				<a href="#teenused" class="btn btn-outline">Meie teenused</a>
+			</div>
 		</div>
+
+		<aside class="hero-contact" aria-label="Kiirkontakt">
+			<a href="tel:+3725017424" class="hero-contact-item">
+				<span class="hero-contact-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<path
+							d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</span>
+				<span>+372 5017 424</span>
+			</a>
+			<a href="mailto:info@millkinnisvara.ee" class="hero-contact-item">
+				<span class="hero-contact-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<rect x="3" y="5" width="18" height="14" rx="2" />
+						<path d="m4 6 8 7 8-7" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</span>
+				<span>info@millkinnisvara.ee</span>
+			</a>
+			<div class="hero-contact-item hero-contact-address">
+				<span class="hero-contact-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<path
+							d="M12 21s7-6.1 7-11.3A7 7 0 0 0 5 9.7C5 14.9 12 21 12 21Z"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+						<circle cx="12" cy="9.5" r="2.3" />
+					</svg>
+				</span>
+				<span>Nano Tagadi küla Saku vald</span>
+			</div>
+		</aside>
 	</div>
 </section>
 
 <style>
 	.hero {
 		position: relative;
-		background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 		color: #ffffff;
 		padding: 120px 0 140px;
 		overflow: hidden;
 	}
 
-	.hero-shape {
+	.hero-bg {
 		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 220px;
+		inset: 0;
+		background: url('/backgroundforwebsite.jpg') center center / cover no-repeat;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(19, 50, 50, 0.82);
 	}
 
 	.hero-inner {
 		position: relative;
 		z-index: 1;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 48px;
+	}
+
+	.hero-text {
 		max-width: 700px;
+		min-width: 0;
 	}
 
 	.hero-eyebrow {
-		color: rgba(255, 255, 255, 0.85);
+		color: #ffffff;
 	}
 
 	.hero h1 {
-		font-size: 2.75rem;
+		font-size: 3.1rem;
 		font-weight: 700;
 		margin-bottom: 20px;
+		color: #ffffff;
 	}
 
 	.hero-lead {
 		font-size: 1.15rem;
-		color: rgba(255, 255, 255, 0.85);
+		color: rgba(255, 255, 255, 0.9);
 		margin-bottom: 36px;
 	}
 
@@ -67,13 +112,91 @@
 		flex-wrap: wrap;
 	}
 
+	.hero-contact {
+		flex-shrink: 0;
+		width: 300px;
+		display: flex;
+		flex-direction: column;
+		background: var(--color-primary-dark);
+		border-left: 3px solid var(--color-hero-accent);
+		padding: 8px 20px;
+		animation: slideInLeft 0.8s ease-out 0.15s both;
+	}
+
+	.hero-contact-item {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		text-decoration: none;
+		color: #ffffff;
+		font-weight: 600;
+		font-size: 0.92rem;
+		padding: 18px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+		transition: color 0.2s ease;
+	}
+
+	.hero-contact-item:last-child {
+		border-bottom: none;
+	}
+
+	a.hero-contact-item:hover {
+		color: var(--color-hero-accent);
+	}
+
+	.hero-contact-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		flex-shrink: 0;
+		color: var(--color-hero-accent);
+	}
+
+	.hero-contact-icon svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	.hero-contact-address {
+		font-weight: 500;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	@keyframes slideInLeft {
+		from {
+			opacity: 0;
+			transform: translateX(60px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@media (max-width: 900px) {
+		.hero-inner {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.hero-text {
+			max-width: 100%;
+		}
+
+		.hero-contact {
+			width: 100%;
+		}
+	}
+
 	@media (max-width: 720px) {
 		.hero {
 			padding: 100px 0 120px;
 		}
 
 		.hero h1 {
-			font-size: 2.1rem;
+			font-size: 2.3rem;
 		}
 	}
 </style>
