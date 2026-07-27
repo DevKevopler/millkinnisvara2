@@ -3,7 +3,7 @@
 		<p class="eyebrow">Teenused</p>
 		<h2 class="title-slide">Mida me Sinu heaks teeme</h2>
 		<p class="section-lead">
-			Keskendume kolmele põhivaldkonnale – kinnisvara müügivahendus, haldus ja hooldus –, et
+			Keskendume kolmele põhivaldkonnale, kinnisvara müügivahendus, haldus ja hooldus, et
 			Sinu kinnisvara oleks heades kätes müügist hoolduseni.
 		</p>
 
@@ -12,73 +12,99 @@
 				<div class="service-media">
 					<img src="/service-muugivahendus.jpg" alt="Kinnisvara müügivahendus" loading="lazy" />
 				</div>
-				<h3>Kinnisvara müügivahendus</h3>
-				<p>
-					Korraldame müügiprotsessi algusest lõpuni – hindamisest ja turundamisest kuni
-					lepingute sõlmimiseni. Hoolitseme selle eest, et tehing oleks Sulle kiire, turvaline
-					ja võimalikult tulus.
-				</p>
-				<ul class="service-list">
-					<li>Tasuta hindamine ja nõustamine</li>
-					<li>Professionaalne turundus ja fotod</li>
-					<li>Ostjate leidmine ja läbirääkimised</li>
-					<li>Tehingu juriidiline korraldamine</li>
-					<li>Müügivahendustasu 5% müügihinnast</li>
-				</ul>
+				<div class="service-card-body">
+					<h3>Kinnisvara müügivahendus</h3>
+					<p>
+						Korraldame müügiprotsessi algusest lõpuni, hindamisest ja turundamisest kuni
+						lepingute sõlmimiseni. Hoolitseme selle eest, et tehing oleks Sulle kiire, turvaline
+						ja võimalikult tulus.
+					</p>
+					<ul class="service-list">
+						<li>Tasuta hindamine ja nõustamine</li>
+						<li>Professionaalne turundus ja fotod</li>
+						<li>Ostjate leidmine ja läbirääkimised</li>
+						<li>Tehingu juriidiline korraldamine</li>
+						<li>Müügivahendustasu 5% müügihinnast</li>
+					</ul>
+				</div>
 			</article>
 
 			<article class="service-card">
 				<div class="service-media">
 					<img src="/service-haldus.jpg" alt="Kinnisvarahaldus" loading="lazy" />
 				</div>
-				<h3>Kinnisvarahaldus</h3>
-				<p>
-					Pakume kinnisvara haldust – võtame enda hooleks Su kinnisvara igapäevase
-					haldamise, et omanikuks olemine oleks mugav ja muretu.
-				</p>
-				<ul class="service-list">
-					<li>Tootmispinnad → tootmis- ja laohooned, tööstuspinnad</li>
-					<li>Äripinnad → bürood ja kaubanduspinnad</li>
-					<li>Eramajad → eramud ja elamud</li>
-				</ul>
+				<div class="service-card-body">
+					<h3>Kinnisvarahaldus</h3>
+					<p>
+						Pakume kinnisvara haldust, võtame enda hooleks Su kinnisvara igapäevase
+						haldamise, et omanikuks olemine oleks mugav ja muretu.
+					</p>
+					<ul class="service-list">
+						<li>Tootmispinnad → tootmis- ja laohooned, tööstuspinnad</li>
+						<li>Äripinnad → bürood ja kaubanduspinnad</li>
+						<li>Eramajad → eramud ja elamud</li>
+					</ul>
+				</div>
 			</article>
 
 			<article class="service-card">
 				<div class="service-media">
 					<img src="/service-hooldus.jpg" alt="Kinnisvarahooldus" loading="lazy" />
 				</div>
-				<h3>Kinnisvarahooldus</h3>
-				<p>
-					Pakume kinnisvara hooldust – korraldame heakorra, hoolduse ja remonditööd, et
-					hoone püsiks heas seisukorras.
-				</p>
-				<ul class="service-list">
-					<li>Ehitusteenus</li>
-					<li>Sisekoristus</li>
-					<li>Välikoristus</li>
-				</ul>
+				<div class="service-card-body">
+					<h3>Kinnisvarahooldus</h3>
+					<p>
+						Pakume kinnisvara hooldust, korraldame heakorra, hoolduse ja remonditööd, et
+						hoone püsiks heas seisukorras.
+					</p>
+					<ul class="service-list">
+						<li>Ehitusteenus</li>
+						<li>Sisekoristus</li>
+						<li>Välikoristus</li>
+					</ul>
+				</div>
 			</article>
 		</div>
 	</div>
 </section>
 
 <style>
+	#teenused {
+		background: var(--color-primary-dark);
+		background-image: url('/pattern-buildings.png');
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: 480px auto;
+	}
+
+	#teenused .eyebrow {
+		color: var(--color-hero-accent);
+	}
+
+	#teenused h2 {
+		color: #ffffff;
+	}
+
+	#teenused .section-lead {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
 	.service-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 40px;
+		gap: 32px;
 		margin-top: 56px;
 	}
 
 	.service-card {
-		position: relative;
+		background: var(--color-primary);
+		border: 1px solid rgba(255, 255, 255, 0.28);
+		border-radius: 6px;
+		overflow: hidden;
 	}
 
 	.service-media {
 		aspect-ratio: 4 / 3;
-		border-radius: 4px;
-		overflow: hidden;
-		margin-bottom: 28px;
 	}
 
 	.service-media img {
@@ -87,13 +113,30 @@
 		object-fit: cover;
 	}
 
+	.service-card-body {
+		padding: 28px 28px 32px;
+	}
+
 	.service-card h3 {
+		position: relative;
+		color: #ffffff;
 		font-size: 1.3rem;
+		padding-top: 16px;
 		margin-bottom: 14px;
 	}
 
-	.service-card > p {
-		color: var(--color-text-muted);
+	.service-card h3::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 28px;
+		height: 2px;
+		background: var(--color-hero-accent);
+	}
+
+	.service-card-body > p {
+		color: rgba(255, 255, 255, 0.75);
 		line-height: 1.7;
 		margin-bottom: 26px;
 	}
@@ -104,7 +147,7 @@
 		flex-direction: column;
 		gap: 12px;
 		padding-top: 22px;
-		border-top: 1px solid var(--color-border);
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	.service-list li {
@@ -112,6 +155,7 @@
 		padding-left: 20px;
 		font-size: 0.92rem;
 		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.85);
 	}
 
 	.service-list li::before {
