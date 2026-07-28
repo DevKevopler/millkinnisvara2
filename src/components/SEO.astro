@@ -66,5 +66,34 @@ const imageURL = new URL(image, site).toString();
     "addressCountry": "EE"
   },
   "areaServed": ["Tallinn", "Harjumaa", "Saku vald"],
-  "priceRange": "Müügivahendustasu 5%"
+  "priceRange": "Müügivahendustasu 5%",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Kinnisvara müügivahendus",
+        "serviceType": "Kinnisvara müügivahendus",
+        "areaServed": ["Tallinn", "Harjumaa"]
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Kinnisvara haldus",
+        "serviceType": "Kinnisvara haldus",
+        "areaServed": ["Tallinn", "Harjumaa"]
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Kinnisvara hooldus",
+        "serviceType": "Kinnisvara hooldus",
+        "areaServed": ["Tallinn", "Harjumaa"]
+      }
+    }
+  ]
 })} />
