@@ -17,35 +17,34 @@ const values = [
 
 <section class="section section-alt" id="meist">
 	<div class="container about-grid">
-		<div class="about-text">
+		<div class="about-photo">
+			<img src="/about-photo.jpg" alt="Mill Kinnisvara vahendatud kodu" loading="lazy" />
+		</div>
+
+		<div class="about-content">
 			<p class="eyebrow">Meist</p>
 			<h2 class="title-slide">Kinnisvarateenus, mis põhineb usaldusel</h2>
-			<div class="about-photo">
-				<img src="/about-photo.jpg" alt="Mill Kinnisvara vahendatud kodu" loading="lazy" />
-			</div>
-			<div class="about-lead-block">
-				<p>
-					Mill Kinnisvara on kinnisvarafirma, mis keskendub kinnisvara müügivahendusele,
-					haldusele ja hooldusele. Meie eesmärk on pakkuda klientidele professionaalset, ausat ja
-					personaalset teenust igas tehingu, halduse või hoolduse etapis.
-				</p>
-			</div>
+			<p class="about-lead">
+				Mill Kinnisvara on kinnisvarafirma, mis keskendub kinnisvara müügivahendusele,
+				haldusele ja hooldusele. Meie eesmärk on pakkuda klientidele professionaalset, ausat ja
+				personaalset teenust igas tehingu, halduse või hoolduse etapis.
+			</p>
 			<p class="about-secondary">
 				Usume, et hea kinnisvarateenus põhineb usaldusel, kohalikul turuteadmisel ja hoolival
 				suhtumisel kliendi vajadustesse.
 			</p>
-		</div>
 
-		<div class="value-list">
-			{values.map((value, index) => (
-				<div class="value-item">
-					<span class="value-index">{String(index + 1).padStart(2, '0')}</span>
-					<div class="value-body">
-						<h4>{value.title}</h4>
-						<p>{value.text}</p>
+			<div class="value-list">
+				{values.map((value, index) => (
+					<div class="value-item">
+						<span class="value-index">{String(index + 1).padStart(2, '0')}</span>
+						<div class="value-body">
+							<h4>{value.title}</h4>
+							<p>{value.text}</p>
+						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</div>
 	</div>
 </section>
@@ -53,23 +52,15 @@ const values = [
 <style>
 	.about-grid {
 		display: grid;
-		grid-template-columns: 1.1fr 1fr;
-		gap: 64px;
-		align-items: start;
-	}
-
-	.about-text h2 {
-		font-size: 2.2rem;
-		margin: 8px 0 28px;
-		line-height: 1.25;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 56px;
+		align-items: stretch;
 	}
 
 	.about-photo {
-		aspect-ratio: 16 / 10;
-		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		overflow: hidden;
-		margin-bottom: 28px;
+		min-height: 360px;
 	}
 
 	.about-photo img {
@@ -78,34 +69,41 @@ const values = [
 		object-fit: cover;
 	}
 
-	.about-lead-block {
-		position: relative;
-		padding-left: 24px;
-		border-left: 3px solid var(--color-hero-accent);
-		margin-bottom: 24px;
+	.about-content {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.about-lead-block p {
+	.about-content h2 {
+		font-size: 2.1rem;
+		margin: 8px 0 20px;
+		line-height: 1.25;
+	}
+
+	.about-lead {
 		color: var(--color-text);
 		font-size: 1.05rem;
 		line-height: 1.7;
+		margin-bottom: 16px;
 	}
 
 	.about-secondary {
 		color: var(--color-text-muted);
 		line-height: 1.7;
+		margin-bottom: 36px;
 	}
 
 	.value-list {
 		display: flex;
 		flex-direction: column;
+		margin-top: auto;
 	}
 
 	.value-item {
 		display: flex;
 		align-items: flex-start;
-		gap: 24px;
-		padding: 26px 0;
+		gap: 20px;
+		padding: 22px 0;
 		border-top: 1px solid var(--color-border);
 	}
 
@@ -116,27 +114,31 @@ const values = [
 	.value-index {
 		flex-shrink: 0;
 		font-family: var(--font-heading);
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		font-weight: 600;
 		color: var(--color-hero-accent);
 		line-height: 1;
 	}
 
 	.value-body h4 {
-		font-size: 1.05rem;
-		margin-bottom: 8px;
+		font-size: 1.02rem;
+		margin-bottom: 6px;
 	}
 
 	.value-body p {
 		color: var(--color-text-muted);
-		font-size: 0.95rem;
+		font-size: 0.92rem;
 		line-height: 1.6;
 	}
 
 	@media (max-width: 860px) {
 		.about-grid {
 			grid-template-columns: 1fr;
-			gap: 40px;
+			gap: 32px;
+		}
+
+		.about-photo {
+			min-height: 280px;
 		}
 	}
 </style>
