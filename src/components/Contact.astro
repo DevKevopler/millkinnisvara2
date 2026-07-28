@@ -9,7 +9,11 @@
 		<div class="contact-panel">
 			<div class="contact-list">
 				<div class="contact-person">
-					<img src="/kinnisvarahooldaja.JPG" alt="Meelis Miller" width="64" height="64" loading="lazy" class="contact-person-photo" />
+					<picture>
+						<source srcset="/kinnisvarahooldaja.avif" type="image/avif" />
+						<source srcset="/kinnisvarahooldaja.webp" type="image/webp" />
+						<img src="/kinnisvarahooldaja.JPG" alt="Meelis Miller" width="64" height="64" loading="lazy" class="contact-person-photo" />
+					</picture>
 					<div>
 						<p class="contact-person-name">Meelis Miller</p>
 						<p class="contact-person-role">Kinnisvarahooldaja, haldus ja müügivahendaja</p>
@@ -98,6 +102,10 @@
 		gap: 20px;
 		padding: 28px 0;
 		border-bottom: 1px solid var(--color-border);
+	}
+
+	.contact-person picture {
+		display: contents;
 	}
 
 	.contact-person-photo {

@@ -10,7 +10,11 @@
 		<div class="service-grid">
 			<article class="service-card">
 				<div class="service-media">
-					<img src="/service-muugivahendus.jpg" alt="Kinnisvara müügivahendus" width="900" height="600" loading="lazy" />
+					<picture>
+						<source srcset="/service-muugivahendus.avif" type="image/avif" />
+						<source srcset="/service-muugivahendus.webp" type="image/webp" />
+						<img src="/service-muugivahendus.jpg" alt="Kinnisvara müügivahendus" width="900" height="600" loading="lazy" />
+					</picture>
 				</div>
 				<div class="service-card-body">
 					<h3>Kinnisvara müügivahendus</h3>
@@ -31,7 +35,11 @@
 
 			<article class="service-card">
 				<div class="service-media">
-					<img src="/service-haldus.jpg" alt="Kinnisvarahaldus" width="900" height="600" loading="lazy" />
+					<picture>
+						<source srcset="/service-haldus.avif" type="image/avif" />
+						<source srcset="/service-haldus.webp" type="image/webp" />
+						<img src="/service-haldus.jpg" alt="Kinnisvarahaldus" width="900" height="600" loading="lazy" />
+					</picture>
 				</div>
 				<div class="service-card-body">
 					<h3>Kinnisvarahaldus</h3>
@@ -49,7 +57,11 @@
 
 			<article class="service-card">
 				<div class="service-media">
-					<img src="/service-hooldus.jpg" alt="Kinnisvarahooldus" width="900" height="600" loading="lazy" />
+					<picture>
+						<source srcset="/service-hooldus.avif" type="image/avif" />
+						<source srcset="/service-hooldus.webp" type="image/webp" />
+						<img src="/service-hooldus.jpg" alt="Kinnisvarahooldus" width="900" height="600" loading="lazy" />
+					</picture>
 				</div>
 				<div class="service-card-body">
 					<h3>Kinnisvarahooldus</h3>
@@ -105,6 +117,12 @@
 
 	.service-media {
 		aspect-ratio: 4 / 3;
+	}
+
+	.service-media picture {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 
 	.service-media img {
