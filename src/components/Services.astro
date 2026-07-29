@@ -82,11 +82,43 @@
 
 <style>
 	#teenused {
+		position: relative;
+		overflow: hidden;
 		background: var(--color-primary-dark);
 		background-image: url('/pattern-buildings.png');
 		background-repeat: no-repeat;
 		background-position: right bottom;
-		background-size: 700px auto;
+		background-size: 950px auto;
+	}
+
+	#teenused::before,
+	#teenused::after {
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	#teenused::before {
+		width: 640px;
+		height: 640px;
+		top: -320px;
+		left: -220px;
+		border: 2px solid rgba(255, 255, 255, 0.22);
+	}
+
+	#teenused::after {
+		width: 420px;
+		height: 420px;
+		top: -260px;
+		left: -60px;
+		border: 2px solid var(--color-hero-accent);
+		opacity: 0.4;
+	}
+
+	#teenused > .container {
+		position: relative;
+		z-index: 1;
 	}
 
 	#teenused .eyebrow {
@@ -109,14 +141,24 @@
 	}
 
 	.service-card {
+		position: relative;
 		background: var(--color-primary);
-		border: 1px solid rgba(255, 255, 255, 0.28);
+		border: 1px solid rgba(255, 255, 255, 0.2);
 		border-radius: 6px;
 		overflow: hidden;
 	}
 
 	.service-media {
+		position: relative;
 		aspect-ratio: 4 / 3;
+		overflow: hidden;
+	}
+
+	.service-media::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, rgba(19, 50, 50, 0) 60%, var(--color-primary) 100%);
 	}
 
 	.service-media picture {
@@ -132,6 +174,8 @@
 	}
 
 	.service-card-body {
+		position: relative;
+		z-index: 1;
 		padding: 28px 28px 32px;
 	}
 
@@ -195,6 +239,24 @@
 	@media (max-width: 640px) {
 		.service-grid {
 			grid-template-columns: 1fr;
+		}
+
+		#teenused {
+			background-size: 420px auto;
+		}
+
+		#teenused::before {
+			width: 280px;
+			height: 280px;
+			top: -140px;
+			left: -100px;
+		}
+
+		#teenused::after {
+			width: 180px;
+			height: 180px;
+			top: -110px;
+			left: -30px;
 		}
 	}
 </style>
