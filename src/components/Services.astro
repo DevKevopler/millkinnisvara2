@@ -3,8 +3,8 @@
 		<p class="eyebrow">Teenused</p>
 		<h2 class="title-slide">Mida me Sinu heaks teeme</h2>
 		<p class="section-lead">
-			Keskendume kolmele põhivaldkonnale, kinnisvara müügivahendus, haldus ja hooldus, et
-			Sinu kinnisvara oleks heades kätes müügist hoolduseni.
+			Keskendume kahele põhivaldkonnale, kinnisvara müügivahendus ja haldus, et
+			Sinu kinnisvara oleks heades kätes.
 		</p>
 
 		<div class="service-grid">
@@ -51,28 +51,6 @@
 						<li>Tootmispinnad → tootmis- ja laohooned, tööstuspinnad</li>
 						<li>Äripinnad → bürood ja kaubanduspinnad</li>
 						<li>Eramajad → eramud ja elamud</li>
-					</ul>
-				</div>
-			</article>
-
-			<article class="service-card">
-				<div class="service-media">
-					<picture>
-						<source srcset="/service-hooldus.avif" type="image/avif" />
-						<source srcset="/service-hooldus.webp" type="image/webp" />
-						<img src="/service-hooldus.jpg" alt="Kinnisvarahooldus" width="900" height="600" loading="lazy" />
-					</picture>
-				</div>
-				<div class="service-card-body">
-					<h3>Kinnisvarahooldus</h3>
-					<p>
-						Pakume kinnisvara hooldust, korraldame heakorra, hoolduse ja remonditööd, et
-						hoone püsiks heas seisukorras.
-					</p>
-					<ul class="service-list">
-						<li>Ehitusteenus</li>
-						<li>Sisekoristus</li>
-						<li>Välikoristus</li>
 					</ul>
 				</div>
 			</article>
@@ -135,7 +113,7 @@
 
 	.service-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 32px;
 		margin-top: 56px;
 	}
@@ -228,12 +206,6 @@
 		color: var(--color-hero-accent);
 		font-weight: 700;
 		font-size: 0.95em;
-	}
-
-	@media (max-width: 1080px) {
-		.service-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
 	}
 
 	@media (max-width: 640px) {
